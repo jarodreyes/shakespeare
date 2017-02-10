@@ -8,9 +8,9 @@ var express = require('express'),
   User = require('../models/user'),
   _ = require('underscore');
 
+// Generate a nice little TwiML response for Twilio
 function twimlMessage (message, media) {
   var output = new twilio.TwimlResponse();
-  console.log(`Length of MEDIA= ${media.length}`);
   if (media.length > 0) {
     output.message(function() {
       this.body(message);
@@ -24,6 +24,7 @@ function twimlMessage (message, media) {
   return output;
 }
 
+// If we are in the romancing state, let's parse the body
 function checkBody(body, user, req) {
   var media = '',
     message = '';
@@ -58,6 +59,7 @@ function checkBody(body, user, req) {
   return {media: media, message: message}
 }
 
+// Twilio webhook for Message url at https://www.twilio.com/console/phone-numbers/XXXXXXXXXXXXXXXXXXXXXXXXXSID
 router.post('/incoming/', function (req,res,next) {
   var body = req.body.Body.toLowerCase(),
     userPhone = req.body.From,
@@ -119,11 +121,5 @@ router.post('/incoming/', function (req,res,next) {
       res.status(500).send('Could not find a user with this phone number.');
     });
 
-    
- 
-
-  // If user is new, then register them via text
-
-  // Otherwise check the sentiment of the incoming message and respond with + or new Sonnet.
 })
 module.exports = router;
