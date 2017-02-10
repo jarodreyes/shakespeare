@@ -38,7 +38,7 @@ function checkBody(body, user, req) {
       break;
     case 'sonnet':
       sonnetGenerator.randomSonnet(user);
-      message = `To thine love, ${user.firstName}. Soon you shalt be receiving a sonnet of mine own creation. Share online using #HelpMeShakespeare, to win a Bansky print.`
+      message = `To thine love, ${user.firstName}. Soon you shalt be receiving a sonnet of mine own creation. Share online using #HelpMeShakespeare.`
       break;
     case 'valentine':
       user.state = 'pairing';
