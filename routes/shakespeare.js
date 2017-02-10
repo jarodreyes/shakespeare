@@ -29,7 +29,7 @@ function checkBody(body, user, req) {
     message = '';
   switch (body) {
     case 'shakespeare':
-      media = '/images/rules.gif';
+      media = '/images/welcome.gif';
       break;
     case 'name':
       user.state = 'registering';
@@ -44,6 +44,11 @@ function checkBody(body, user, req) {
       user.state = 'pairing';
       user.save();
       message = `Okay what is thoust valentine's name?`
+      break;
+    case 'email':
+      user.state = 'naming';
+      user.save();
+      message = `Okay what is thoust email address?`
       break;
     default:
       var response = romanceMeter.check(user, req);
