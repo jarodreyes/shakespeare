@@ -102,6 +102,7 @@ router.post('/incoming/', function (req,res,next) {
           user.email = req.body.Body;
           user.state = 'romancing';
           user.save();
+          user.sendEmail();
           message = 'Okay great! Shall we proceed? Send any SMS message and I will check how romantic thou thoughts wouldst be. Otherwise type "Sonnet" and I shalt send thou a Sonnet of mine own creation. Or type "Shakespeare" to look upon mine full instructions.';
           break;
         default:

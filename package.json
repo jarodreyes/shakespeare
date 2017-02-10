@@ -45,6 +45,7 @@
     "node-gd": "1.4.0",
     "node-rest-client": "2.5.0",
     "pug": "^2.0.0-alpha6",
+    "sendgrid": "4.7.1",
     "serve-favicon": "~2.3.0",
     "twilio": "^2.8.0",
     "underscore": "^1.8.3"

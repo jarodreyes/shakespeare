@@ -3,6 +3,7 @@
 var mongoose = require('mongoose');
 var config = require('../config');
 var twilioClient = require('twilio')(config.accountSid, config.authToken);
+var Emailer = require('../lib/sendgrid-emailer');
 
 var Sonnet = new mongoose.Schema({
   url: String,
@@ -34,4 +35,8 @@ User.methods.sendImage = function(media) {
   });
 };
 
+// Send a text message via twilio to this user
+User.methods.sendEmail = function() {
+    Emailer.sendEmail(this);
+};
 module.exports = mongoose.model('User', User);
