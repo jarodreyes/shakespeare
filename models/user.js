@@ -1,6 +1,8 @@
 'use strict';
 
 var mongoose = require('mongoose');
+var config = require('../config');
+var twilioClient = require('twilio')(config.accountSid, config.authToken);
 
 var Sonnet = new mongoose.Schema({
   url: String,
@@ -15,9 +17,21 @@ var User = new mongoose.Schema({
   email: String,
   phone: String,
   imageUrl: String,
-	state: { type: String, enum: states },
+	state: { type: String, enum: states, default: 'new' },
 	valentineName: String,
   sonnets: [Sonnet]
 });
+
+// Send a text message via twilio to this user
+User.methods.sendImage = function(media) {
+  var self = this;
+  twilioClient.sendMessage({
+    to: self.phone,
+    from: config.twilioNumber,
+    mediaUrl: media
+  }, function(err, response) {
+    console.log(err);
+  });
+};
 
 module.exports = mongoose.model('User', User);
