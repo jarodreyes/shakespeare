@@ -29,7 +29,7 @@ function checkBody(body, user, req) {
     message = '';
   switch (body) {
     case 'shakespeare':
-      media = '/images/welcome.gif';
+      media = '/images/rules.gif';
       break;
     case 'name':
       user.state = 'registering';
@@ -76,7 +76,7 @@ router.post('/incoming/', function (req,res,next) {
         case 'new':
 
           message = 'Hello, I am Shakespeare. It would be heavenly to assist ye. First question, what be thy first name?';
-          media = '/images/rules.gif';
+          media = '/images/welcome.gif';
           user.state = 'registering';
           user.save();
           break;
