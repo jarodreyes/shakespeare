@@ -78,7 +78,6 @@ router.post('/incoming/', function (req,res,next) {
         case 'new':
 
           message = 'Hello, I am Shakespeare. It would be heavenly to assist ye. First question, what be thy first name?';
-          media = '/images/welcome.gif';
           user.state = 'registering';
           user.save();
           break;
@@ -97,7 +96,7 @@ router.post('/incoming/', function (req,res,next) {
 
             user.state = 'romancing';
             user.save();
-            message = 'Okay great! Shall we proceed? Send any SMS message and I will check how romantic thou thoughts wouldst be. Otherwise type "Sonnet" and I shalt send thou a Sonnet of mine own creation. Or type "Shakespeare" to look upon mine full instructions.';
+            message = 'Okay great! Shall we proceed? Send any SMS message and I will check how romantic thou thoughts wouldst be. Otherwise type "Sonnet" and I shalt send thou a Sonnet of mine own creation.';
           }
           break;
         case 'naming':
@@ -105,7 +104,8 @@ router.post('/incoming/', function (req,res,next) {
           user.state = 'romancing';
           user.save();
           user.sendEmail();
-          message = 'Okay great! Shall we proceed? Send any SMS message and I will check how romantic thou thoughts wouldst be. Otherwise type "Sonnet" and I shalt send thou a Sonnet of mine own creation. Or type "Shakespeare" to look upon mine full instructions.';
+          media = '/images/welcome.gif';
+          message = 'Okay great! Shall we proceed? Send any SMS message and I will check how romantic thou thoughts wouldst be. Otherwise type "Sonnet" and I shalt send thou a Sonnet of mine own creation.';
           break;
         default:
           var appropriateResponse = checkBody(body, user, req);
