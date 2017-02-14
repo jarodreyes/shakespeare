@@ -85,62 +85,6 @@
 	</div>
 </section>
 
-
-
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/interface.js"></script> 
-<script type="text/javascript"> 
-	$(document).ready(function(){
-	$("#menu_slide").click(function(){
-		$("#navbar").slideToggle('normal');
-	});
-	});
- </script>
-<!--Menu Js Right Menu-->
-<script type="text/javascript">
-$(document).ready(function(){
-  $('#navbar > ul > li:has(ul)').addClass("has-sub");
-  $('#navbar > ul > li > a').click(function() {
-    var checkElement = $(this).next();
-    $('#navbar li').removeClass('dropdown');
-    $(this).closest('li').addClass('dropdown');	
-    if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
-      $(this).closest('li').removeClass('dropdown');
-      checkElement.slideUp('normal');
-    }
-    if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
-      $('#navbar ul ul:visible').slideUp('normal');
-      checkElement.slideDown('normal');
-    }
-    if (checkElement.is('ul')) {
-      return false;
-    } else {
-      return true;	
-    }		
-  });
-});
-<!--end-->
-</script>
-<script type="text/javascript">	
-$("#navbar").on("click", function(event){
-    event.stopPropagation();
-});
-$(".dropdown-menu").on("click", function(event){
-    event.stopPropagation();
-});
-$(document).on("click", function(event){
-    $(".dropdown-menu").slideUp('normal');
-});	
-
-$(".navbar-header").on("click", function(event){
-    event.stopPropagation();
-});
-$(document).on("click", function(event){
-    $("#navbar").slideUp('normal');
-});		
-</script>
-
 </body>
 <!-- JS Plugins -->
   </html>
