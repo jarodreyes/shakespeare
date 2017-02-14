@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Help Me Shakespeare</title>
+    
+	<!-- Bootstrap CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+     <!-- CSS Custom -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+    <!-- favicon Icon -->
+    <!--<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon">-->
+    <!-- CSS Plugins -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <!-- Google Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+
+<section id="home" class="top_banner_bg secondary-bg">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="top_banner">
+				
+				</div>
+				
+				<div class="col-md-6">
+					<div class="present">
+						<h1> Help Me Shakespeare</h1>
+						
+						<h5> Text <span> 1(501)712-4613 </span> to get romantic help from <b> Shakespeare</b> </h5>
+						
+					</div>
+				</div>
+				
+				<div class="col-md-6">
+					<div class="present_img">
+						<img src="images/image-1.png" alt="image">
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section class="primary-bg">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+			
+			<div class="section_heading">
+				<h2> ROMANTIC MUCH? </h2>
+				
+				<h4> This Valentine's Day, don't get caught flat-footed without a nice message in your card. Get some help with the finest linguist of all time. </h4>
+			</div>		
+				
+			
+				<div class="col-md-6">
+					<div class="features_img pull-left">
+						<img src="mockup2.jpg" alt="image">
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/interface.js"></script> 
+<script type="text/javascript"> 
+	$(document).ready(function(){
+	$("#menu_slide").click(function(){
+		$("#navbar").slideToggle('normal');
+	});
+	});
+ </script>
+<!--Menu Js Right Menu-->
+<script type="text/javascript">
+$(document).ready(function(){
+  $('#navbar > ul > li:has(ul)').addClass("has-sub");
+  $('#navbar > ul > li > a').click(function() {
+    var checkElement = $(this).next();
+    $('#navbar li').removeClass('dropdown');
+    $(this).closest('li').addClass('dropdown');	
+    if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+      $(this).closest('li').removeClass('dropdown');
+      checkElement.slideUp('normal');
+    }
+    if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+      $('#navbar ul ul:visible').slideUp('normal');
+      checkElement.slideDown('normal');
+    }
+    if (checkElement.is('ul')) {
+      return false;
+    } else {
+      return true;	
+    }		
+  });
+});
+<!--end-->
+</script>
+<script type="text/javascript">	
+$("#navbar").on("click", function(event){
+    event.stopPropagation();
+});
+$(".dropdown-menu").on("click", function(event){
+    event.stopPropagation();
+});
+$(document).on("click", function(event){
+    $(".dropdown-menu").slideUp('normal');
+});	
+
+$(".navbar-header").on("click", function(event){
+    event.stopPropagation();
+});
+$(document).on("click", function(event){
+    $("#navbar").slideUp('normal');
+});		
+</script>
+
+</body>
+<!-- JS Plugins -->
+  </html>
