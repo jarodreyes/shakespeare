@@ -44,6 +44,7 @@
     "morgan": "~1.6.1",
     "node-gd": "1.4.0",
     "node-rest-client": "2.5.0",
+    "profanity-util": "0.1.0",
     "pug": "^2.0.0-alpha6",
     "sendgrid": "4.7.1",
     "serve-favicon": "~2.3.0",
